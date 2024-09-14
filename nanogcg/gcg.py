@@ -49,6 +49,7 @@ class GCGResult:
     best_string: str
     losses: List[float]
     strings: List[str]
+    epoches: int
 
 class AttackBuffer:
     def __init__(self, size: int):
@@ -306,6 +307,7 @@ class GCG:
             best_string=optim_strings[min_loss_index],
             losses=losses,
             strings=optim_strings,
+            epoches=len(losses)
         )
 
         return result
